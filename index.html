@@ -1,0 +1,706 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #700943;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1> Her Apparent Online Shop</h1>
+  <p> <b>Created</b> by Chyles Arguelles.</p>
+</div>
+
+<style>
+  * {box-sizing: border-box;}
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #e9e9e9;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #3e0a38;
+    color: white;
+  }
+  
+  .topnav .login-container {
+    float: right;
+  }
+  
+  .topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width:120px;
+  }
+  
+  .topnav .login-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background-color: #555;
+    color: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topnav .login-container button:hover {
+    background-color: green;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav .login-container {
+      float: none;
+    }
+    .topnav a, .topnav input[type=text], .topnav .login-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      border: 1px solid #ccc;  
+    }
+  }
+  <style>
+.checked {
+  color: orange;
+}
+  </style>
+  </head>
+  <body>
+  
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#addtocart">Add To Cart</a>
+    <div class="login-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Username" name="username">
+        <input type="text" placeholder="Password" name="psw">
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\oMAAXgAsywJJYf3eccHPE427bD6PfAug3Q2OJW~tplv-tej9nj120t-origin.webp">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\oMAAXgAsywJJYf3eccHPE427bD6PfAug3Q2OJW~tplv-tej9nj120t-origin.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Silk Black Shirt (s-m)
+      <hr> 
+                    $2.56 - $3.90
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\korean-fashion-stores-stylenanda.jpg">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\main-qimg-5128b205ca2348d2ad7cad6b951229f0-lq.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Smileven Shirt (s-l)
+      <hr> 
+                       $4.99 - $5.00 
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\cj6743a-red-maxi-shacket-32654416085158_600x.webp">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\cj6743a-red-maxi-shacket-32654416085158_600x.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Aesthetic Style Outfit (s-m)
+      <hr>
+                      $1.99 - $3.90
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\d3a048653d9fa55938dd8670f213f0ab.jpg">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\d3a048653d9fa55938dd8670f213f0ab.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Sparkly Blue Gown (s-l)
+      <hr>
+                      $5.59 - $7.99
+    </div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\ugc_stylehint_uq_th_photo_230825_1160312_c-600-800.png">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\ugc_stylehint_uq_th_photo_230825_1160312_c-600-800.png" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Old Anemon Jumper (s-l)
+      <hr>
+                       $4.00 - $5.49
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\232755820ab018d79149279e8a20e398.jpg">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\232755820ab018d79149279e8a20e398.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Floral Orange Dress (s-m)
+      <hr>
+                     $2.99 - $4.39
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\image_2FFSZW07527_2FFSZW07527_B_S_NUB_2F01b5d0c1736d74cff2384e045c2e2d8a_530x@2x.webp">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\image_2FFSZW07527_2FFSZW07527_B_S_NUB_2F01b5d0c1736d74cff2384e045c2e2d8a_530x@2x.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc"> Waist Cut Dress (s-m)
+      <hr>
+                        $3.98 - $5.99
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\AVO_MODAL_LONG_SLEEVE_PJ_SET_BLACK_4885_2000w_800x800.webp">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\AVO_MODAL_LONG_SLEEVE_PJ_SET_BLACK_4885_2000w_800x800.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Blacky Simple Pajamas (s-l)
+      <hr>
+                      $4.99 - $6.49
+    </div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\ugc_stylehint_uq_th_photo_230825_1160312_c-600-800.png">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\e1898fc7a03564a0deabcaa28bc40a5d.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Tulle Old White (s-m)
+                     <hr>
+                      $ 3.99 - $ 6.59</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\232755820ab018d79149279e8a20e398.jpg">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\0c0829ead7a0aa72cb7f10c7b4e8f09d.jpg_960x960q80.jpg_.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Modest Brown Style (s-m)
+      <hr>
+                     $ 10.90 - $ 12.90</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\image_2FFSZW07527_2FFSZW07527_B_S_NUB_2F01b5d0c1736d74cff2384e045c2e2d8a_530x@2x.webp">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\White-Mini-Short-Evening-Dress-A-Line-Princess-Stretch-Satin-Ruffles-Halter-Sleeveless-Party-Gowns-Formal.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">White Vintage Dress (s-m)
+      <hr>
+             $ 5.20 - $ 6.70</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\AVO_MODAL_LONG_SLEEVE_PJ_SET_BLACK_4885_2000w_800x800.webp">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\d2e55b1d7c6ac5755af5b8594bd96017.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Simple Red Pajamas (s-l)
+      <hr>
+                 $ 1.36 - $ 1.70</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\ugc_stylehint_uq_th_photo_230825_1160312_c-600-800.png">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\a1ff26645577f44251f49100f3211724.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Faux Pink Gown (s-m)
+        <hr>         
+              $ 3.50 - $7.20</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\232755820ab018d79149279e8a20e398.jpg">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\image_43853d1b-c93e-49f4-a345-efab32c33de3_600x.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Tassel Summer Dress (s-m)
+      <hr>           $ 5.55 - $ 6.00</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\image_2FFSZW07527_2FFSZW07527_B_S_NUB_2F01b5d0c1736d74cff2384e045c2e2d8a_530x@2x.webp">
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\ugc_stylehint_uq_th_photo_231107_1209263_c-600-800.png" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc"> Sequins Shirt (s-l)
+      <hr>
+                       $ 6.59 -  $ 8.99</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\AVO_MODAL_LONG_SLEEVE_PJ_SET_BLACK_4885_2000w_800x800.webp">
+      <img src="C:\Users\ASUS\Downloads\1c97aecad878eb4c1ed65b4b7eaee57a.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Brown Dress Jumper(s-m)
+      <hr>
+                    $ 5.25 - $ 5.55</div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\ugc_stylehint_uq_th_photo_230825_1160312_c-600-800.png">
+      <img src="C:\Users\ASUS\Downloads\b52fcf2a07d14cce8648daf1e65fb951.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Black Roll Neck (s-m)
+                     <hr>
+                      $ 3.99 - $ 6.59</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\232755820ab018d79149279e8a20e398.jpg">
+      <img src="C:\Users\ASUS\Downloads\959483682.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Osoris Lux Dress (s-m)
+      <hr>
+                     $ 10.90 - $ 12.90</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\image_2FFSZW07527_2FFSZW07527_B_S_NUB_2F01b5d0c1736d74cff2384e045c2e2d8a_530x@2x.webp">
+      <img src="C:\Users\ASUS\Downloads\202306091602147902975.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Silk Tiered Dress (s-m)
+      <hr>
+             $ 5.20 - $ 6.70</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\AVO_MODAL_LONG_SLEEVE_PJ_SET_BLACK_4885_2000w_800x800.webp">
+      <img src="C:\Users\ASUS\Downloads\6af5518eb9382de8d47388a03d193699.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Sleeve Purple Pajamas (s-l)
+      <hr>
+                 $ 1.36 - $ 1.70</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\ugc_stylehint_uq_th_photo_230825_1160312_c-600-800.png">
+      <img src="C:\Users\ASUS\Downloads\wardrobe-1681864673346.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Gliz Purple Gown (s-m)
+        <hr>         
+              $ 3.50 - $7.20</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\232755820ab018d79149279e8a20e398.jpg">
+      <img src="C:\Users\ASUS\Downloads\534547b0ae2ca84c943920feffb18811.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Halter Summer Dress(s-m)
+      <hr>           $ 5.55 - $ 6.00</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\image_2FFSZW07527_2FFSZW07527_B_S_NUB_2F01b5d0c1736d74cff2384e045c2e2d8a_530x@2x.webp">
+      <img src="C:\Users\ASUS\Downloads\S0958e72b2fcf4b8d9c02eeab6b8aede89.webp" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc"> Squined Clothes (s-l)
+      <hr>
+                       $ 6.59 -  $ 8.99</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\AVO_MODAL_LONG_SLEEVE_PJ_SET_BLACK_4885_2000w_800x800.webp">
+      <img src="C:\Users\ASUS\Downloads\Jungmaven-Jumper-Dress-20221006012800.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">White Jumper (s-m)
+      <hr>
+                    $ 5.25 - $ 5.55</div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\oMAAXgAsywJJYf3eccHPE427bD6PfAug3Q2OJW~tplv-tej9nj120t-origin.webp">
+      <img src="C:\Users\ASUS\Downloads\ugc_stylehint_uq_th_photo_221104_981604_c-600-800.png" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Old Brown Dress (s-m)
+      <hr> 
+                    $2.56 - $3.90
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\korean-fashion-stores-stylenanda.jpg">
+      <img src="C:\Users\ASUS\Downloads\French lace stitching doll collar long sleeve.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">French Lace Doll (s-l)
+      <hr> 
+                       $4.99 - $5.00 
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\cj6743a-red-maxi-shacket-32654416085158_600x.webp">
+      <img src="C:\Users\ASUS\Downloads\Rainbow pants with shirt.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Rainbow Pants & Shirt (s-m)
+      <hr>
+                      $1.99 - $3.90
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\d3a048653d9fa55938dd8670f213f0ab.jpg">
+      <img src="C:\Users\ASUS\Downloads\Elegance lace ball gown with beading.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Elegance Lace Gown (s-l)
+      <hr>
+                      $5.59 - $7.99
+    </div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\ugc_stylehint_uq_th_photo_230825_1160312_c-600-800.png">
+      <img src="C:\Users\ASUS\Downloads\Longline roll neck jumper dress.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Longline Roll Jumper (s-l)
+      <hr>
+                       $4.00 - $5.49
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\232755820ab018d79149279e8a20e398.jpg">
+      <img src="C:\Users\ASUS\Downloads\Sweet heart Dress.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Sweetheart Dress (s-m)
+      <hr>
+                     $2.99 - $4.39
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\image_2FFSZW07527_2FFSZW07527_B_S_NUB_2F01b5d0c1736d74cff2384e045c2e2d8a_530x@2x.webp">
+      <img src="C:\Users\ASUS\Downloads\sina-party-dress-.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc"> Sina Party Dress (s-m)
+      <hr>
+                        $3.98 - $5.99
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="C:\Users\ASUS\Downloads\AVO_MODAL_LONG_SLEEVE_PJ_SET_BLACK_4885_2000w_800x800.webp">
+      <img src="C:\Users\ASUS\Downloads\Undercolors_23A_42NT3P00C_910_F_Full_Card_v.jpg" alt="Dress" width="600" height="400">
+    </a>
+    <div class="desc">Whitered Pajamas(s-l)
+      <hr>
+                      $4.99 - $6.49
+    </div>
+  </div>
+</div>
+
+
+<div class="clearfix"></div>
+
+<div style="padding:6px;">
+</div>
+
+<div class="footer">
+  <h2>Product Ratings</h2>
+</div>
+<div>
+  <p>A****:The Product was so beautiful.</p>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  </div>
+  <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\50e006e5b8439b76589b04919bb11509.jpg" alt="Trulli" width="100" height="100">
+  </div>
+  <div>
+    <p>P****:Beautiful Dress,thankss.</p>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    </div>
+    <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\image_6fbc2973-8aeb-4688-a2c5-e619887f93df_600x.webp" alt="Trulli" width="100" height="100">
+    </div>
+    <div>
+    <p>K****:Thanks Seller.</p>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    </div>
+    <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\1305906.1.jpg" alt="Trulli" width="100" height="100">
+    </div>
+    <div>
+      <p>A****:The Product was so fit to me, i will buy again, thanks.</p>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\0656ebe8eb182d8cee454c73e7dc2613.jpg" alt="Trulli" width="100" height="100">
+      </div>
+      <div>
+      <p>C****:So sexy, thank you Seller!</p>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      </div>
+      <img src="C:\Users\ASUS\OneDrive\Desktop\website pic\dfba694a9a27a056b7437d965778e78b.jpg" alt="Trulli" width="100" height="100">
+      </div>
+
+</body>
+</html>
